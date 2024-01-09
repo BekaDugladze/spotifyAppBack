@@ -79,6 +79,7 @@ app.get('/profile',  (req, res) => {
         res.status(200).json({
             message: ` ${req.user.displayName}`
         })
+        console.log(req.user)
     } else {
         res.status(500)
     }
