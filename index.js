@@ -22,9 +22,9 @@ app.use(passport.session());
 
 app.use(
     cors({
-        origin: 'https://spotify-app-front-zeta.vercel.app',
+        origin: 'https://spotify-back-vsee.onrender.com',
         methods: 'GET, POST, PUT, DELETE',
-        credentials: 'include,
+        credentials: 'include',
     })
 )
 
