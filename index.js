@@ -29,6 +29,14 @@ app.use(
 )
 
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://spotify-app-front-zeta.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
+
 app.get('/', function(req, res) {
     res.send('<a href="/auth/google">google</a> <a href="/auth/facebook">facebook</a> <a href="/auth/spotify">spotify</a>');
 })
