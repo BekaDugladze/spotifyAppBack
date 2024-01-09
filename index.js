@@ -7,6 +7,7 @@ const cookieSession = require('cookie-session');
 require('./passport');
 const session = require('express-session');
 const axios = require('axios');
+const http = require('http');
 
 app.use(session({
     secret: '231322', 
@@ -220,6 +221,11 @@ app.get('/artists/random', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'application/json'});
+  res.end('Hello, world!');
+})
 
 const port = process.env.PORT || 8090;
 app.listen(port, () => console.log('Listening on port ' + port));
