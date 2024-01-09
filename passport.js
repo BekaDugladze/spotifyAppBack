@@ -8,7 +8,7 @@ passport.use(
     {
       clientID: process.env.SPOTIFY_CLIENT_ID,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-      callbackURL: 'http://localhost:8090/spotify/callback'
+      callbackURL: 'https://spotify-app-front-five.vercel.app/spotify/callback'
     },
     function(accessToken, refreshToken, expires_in, profile, done) {
         return done(null, profile);
@@ -19,7 +19,7 @@ passport.use(
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8090/google/callback",
+    callbackURL: "https://spotify-app-front-five.vercel.app/google/callback",
     passReqToCallback: true,
   },
   function(request, accessToken, refreshToken, profile, done) {
@@ -30,7 +30,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: "http://localhost:8090/facebook/callback",
+    callbackURL: "https://spotify-app-front-five.vercel.app/facebook/callback",
     passReqToCallback: true,
   },
   function(req, accessToken, refreshToken, profile, done) {
